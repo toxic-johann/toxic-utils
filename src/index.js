@@ -89,3 +89,23 @@ export function bind (fn: Function, context: any): Function {
   }
 }
 
+// **********************  计算类    ************************
+// 计算获取某种东西或者计算出某种东西
+// ********************************************************
+// 生成uuid
+export function uuid (): string {
+  return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4());
+}
+// 生成四个随机数
+export function S4 (): string {
+  return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+}
+// 生成任意长度的随机数
+export function rand (length: number): string {
+  let str = '';
+  while(str.length < length) {
+    str += S4();
+  }
+  return str.slice(0, length);
+}
+
