@@ -1,6 +1,6 @@
 {
   "name": "toxic-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "utils",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -48,6 +48,7 @@
     "nyc": "^11.0.2",
     "rollup": "^0.43.0",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-flow-no-whitespace": "^1.0.0",
     "rollup-plugin-includepaths": "^0.2.2",
     "rollup-plugin-node-resolve": "^3.0.0",
@@ -70,6 +71,6 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "toxic-predicate-functions": "^0.1.1"
+    "toxic-predicate-functions": "^0.1.2"
   }
 }
