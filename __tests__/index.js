@@ -104,12 +104,12 @@ describe('bind', () => {
     bar.apply = null;
     utils.bind(bar, foo)();
   });
+});
 
-  test('rand', () => {
-    expect(utils.rand(4).length).toBe(4);
-  });
+test('rand', () => {
+  expect(utils.rand(4).length).toBe(4);
+});
 
-  test('uuid', () => {
-    expect(utils.uuid()).not.toEqual(utils.uuid());
-  });
+test('uuid', () => {
+  expect(utils.uuid()).not.toEqual(utils.uuid());
 });
