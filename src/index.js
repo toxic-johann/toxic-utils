@@ -1,9 +1,9 @@
 // @flow
 import {isArray, isObject, isPrimitive} from 'toxic-predicate-functions';
 /**
- * 生成深度遍历函数的处理器，常用于生成深度拷贝等
- * @param  {Function} fn 遍历到深度变量的时候的操作
- * @return {Function}     可用的操作函数
+ * the handler to generate an deep traversal handler
+ * @param  {Function} fn the function you wanna run when you reach in the deep property
+ * @return {Function}    the handler
  */
 export function genTraversalHandler (fn: Function): Function {
   function recursiveFn (source, target, key) {
@@ -20,9 +20,9 @@ export function genTraversalHandler (fn: Function): Function {
 };
 const _deepAssign = genTraversalHandler(val => val);
 /**
- * 对象克隆
- * @param  {Array|Object} source 传其他值会直接返回
- * @return {clone-target}        [description]
+ * deeply clone an object
+ * @param  {Array|Object} source if you pass in other type, it will throw an error
+ * @return {clone-target}        the new Object
  */
 export function deepClone<T: Object | Array<any>> (source: T): T {
   if(isPrimitive(source)) {
@@ -89,18 +89,22 @@ export function bind (fn: Function, context: any): Function {
   }
 }
 
-// **********************  计算类    ************************
-// 计算获取某种东西或者计算出某种东西
-// ********************************************************
-// 生成uuid
+/**
+ * generate an uuid
+ */
 export function uuid (): string {
   return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4());
 }
-// 生成四个随机数
+/**
+ * generate an random number which length is 4
+ */
 export function S4 (): string {
   return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
 }
-// 生成任意长度的随机数
+
+/**
+ * generate an random number with specific length
+ */
 export function rand (length: number): string {
   let str = '';
   while(str.length < length) {
