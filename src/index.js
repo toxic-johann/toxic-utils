@@ -1,5 +1,5 @@
 // @flow
-import {isArray, isObject, isPrimitive} from 'toxic-predicate-functions';
+import {isArray, isObject, isPrimitive, isString, isVoid} from 'toxic-predicate-functions';
 /**
  * the handler to generate an deep traversal handler
  * @param  {Function} fn the function you wanna run when you reach in the deep property
@@ -113,3 +113,35 @@ export function rand (length: number): string {
   return str.slice(0, length);
 }
 
+/**
+ * get an deep property
+ */
+export function getDeepProperty (obj: any, keys: string | Array<string>, {
+  throwError = false,
+  backup,
+}: {
+  throwError?: boolean,
+  backup?: any
+} = {}) {
+  if(isString(keys)) {
+    keys = keys.split('.');
+  }
+  if(!isArray(keys)) {
+    throw new TypeError('keys of getDeepProperty must be string or Array<string>');
+  }
+  const read = [];
+  let target = obj;
+  for(let i = 0, len = keys.length; i < len; i++) {
+    const key = keys[i];
+    if(isVoid(target)) {
+      if(throwError) {
+        throw new Error(`obj${read.length > 0 ? ('.' + read.join('.')) : ' itself'} is ${target}`);
+      } else {
+        return backup;
+      }
+    }
+    target = target[key];
+    read.push(key);
+  }
+  return target;
+}
