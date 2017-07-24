@@ -34,7 +34,7 @@ if you are using `flow`, you should import our flow defination, by adding this t
 
 ### genTraversalHandler
 
-[src/index.js:8-20](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L8-L20 "Source code on GitHub")
+[src/index.js:8-20](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L8-L20 "Source code on GitHub")
 
 the handler to generate an deep traversal handler
 
@@ -46,7 +46,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ### deepClone
 
-[src/index.js:27-32](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L27-L32 "Source code on GitHub")
+[src/index.js:27-32](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L27-L32 "Source code on GitHub")
 
 deeply clone an object
 
@@ -58,7 +58,7 @@ Returns **clone-target** the new Object
 
 ### deepAssign
 
-[src/index.js:38-50](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L38-L50 "Source code on GitHub")
+[src/index.js:38-50](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L38-L50 "Source code on GitHub")
 
 merge multiple objects
 
@@ -70,7 +70,7 @@ Returns **merge-object** [description]
 
 ### camelize
 
-[src/index.js:57-63](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L57-L63 "Source code on GitHub")
+[src/index.js:57-63](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L57-L63 "Source code on GitHub")
 
 camelize any string, e.g hello world -> helloWorld
 
@@ -83,7 +83,7 @@ Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### hypenate
 
-[src/index.js:69-71](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L69-L71 "Source code on GitHub")
+[src/index.js:69-71](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L69-L71 "Source code on GitHub")
 
 hypenate any string e.g hello world -> hello-world
 
@@ -95,7 +95,7 @@ Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### bind
 
-[src/index.js:78-90](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L78-L90 "Source code on GitHub")
+[src/index.js:78-90](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L78-L90 "Source code on GitHub")
 
 bind the function with some context. we have some fallback strategy here
 
@@ -108,7 +108,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ### uuid
 
-[src/index.js:95-97](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L95-L97 "Source code on GitHub")
+[src/index.js:95-97](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L95-L97 "Source code on GitHub")
 
 generate an uuid
 
@@ -116,7 +116,7 @@ Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### S4
 
-[src/index.js:101-103](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L101-L103 "Source code on GitHub")
+[src/index.js:101-103](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L101-L103 "Source code on GitHub")
 
 generate an random number which length is 4
 
@@ -124,7 +124,7 @@ Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ### rand
 
-[src/index.js:108-114](https://github.com/toxic-johann/toxic-utils/blob/4f66062c9121d661c88932269631ab09038440c1/src/index.js#L108-L114 "Source code on GitHub")
+[src/index.js:108-114](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L108-L114 "Source code on GitHub")
 
 generate an random number with specific length
 
@@ -133,3 +133,17 @@ generate an random number with specific length
 -   `length` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+### getDeepProperty
+
+[src/index.js:119-147](https://github.com/toxic-johann/toxic-utils/blob/2b6844986d149e8d81d0c29eb28c4d5a2b92e5f6/src/index.js#L119-L147 "Source code on GitHub")
+
+get an deep property
+
+**Parameters**
+
+-   `obj` **any** 
+-   `keys` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)** 
+-   `$2` **any**  (optional, default `{}`)
+    -   `$2.throwError`   (optional, default `false`)
+    -   `$2.backup`  
