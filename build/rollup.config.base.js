@@ -40,12 +40,14 @@ const babelConfig = {
   },
   iife: {
     presets: ['flow', 'es2015-rollup'],
+    exclude: 'node_modules/**',
     plugins: [],
     babelrc: false
   },
   min: {
     presets: ['flow', 'es2015-rollup'],
     plugins: [],
+    exclude: 'node_modules/**',
     babelrc: false
   }
 };
