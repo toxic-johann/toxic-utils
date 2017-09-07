@@ -53,7 +53,7 @@ const babelConfig = {
 };
 export default function (mode) {
   return {
-    entry: 'src/index.js',
+    input: 'src/index.js',
     banner,
     external (id) {
       return !/min|umd|iife/.test(mode) && /babel-runtime|toxic-predicate-functions/.test(id);
