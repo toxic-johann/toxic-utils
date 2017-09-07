@@ -48,7 +48,21 @@ describe('deepAssign', () => {
       expect(result).toEqual(results[index]);
     });
   });
+  test('change size', () => {
+    expect(utils.deepAssign({
+      volume: true
+    }, {
+      volume: {
+        name: 'aaa'
+      }
+    })).toEqual({
+      volume: {
+        name: 'aaa'
+      }
+    });
+  });
 });
+
 describe('camelize', () => {
   const examples = [
     'helloWorld', 'hello world', 'hello-world', 'hello - world',

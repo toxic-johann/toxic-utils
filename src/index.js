@@ -8,8 +8,11 @@ import {isArray, isObject, isPrimitive, isString, isVoid} from 'toxic-predicate-
 export function genTraversalHandler (fn: Function): Function {
   function recursiveFn (source, target, key) {
     if(isArray(source) || isObject(source)) {
-      target = target || (isObject(source) ? {} : []);
+      target = isPrimitive(target)
+        ? (isObject(source) ? {} : [])
+        : target;
       for(const key in source) {
+        // $FlowFixMe: support computed key here
         target[key] = recursiveFn(source[key], target[key], key);
       }
       return target;
