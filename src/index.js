@@ -5,7 +5,9 @@ import {isArray, isObject, isPrimitive, isString, isVoid} from 'toxic-predicate-
  * @param  {Function} fn the function you wanna run when you reach in the deep property
  * @return {Function}    the handler
  */
-export function genTraversalHandler (fn: Function): Function {
+export function genTraversalHandler (fn: Function, setter: Function = (target, key, value) => { target[key] = value; }): Function {
+  // use recursive to move what in source to the target
+  // if you do not provide a target, we will create a new target
   function recursiveFn (source, target, key) {
     if(isArray(source) || isObject(source)) {
       target = isPrimitive(target)
@@ -13,7 +15,8 @@ export function genTraversalHandler (fn: Function): Function {
         : target;
       for(const key in source) {
         // $FlowFixMe: support computed key here
-        target[key] = recursiveFn(source[key], target[key], key);
+        setter(target, key, recursiveFn(source[key], target[key], key));
+        // target[key] = recursiveFn(source[key], target[key], key);
       }
       return target;
     }
