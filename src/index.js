@@ -2,7 +2,8 @@
 import {isArray, isObject, isPrimitive, isString, isVoid} from 'toxic-predicate-functions';
 /**
  * the handler to generate an deep traversal handler
- * @param  {Function} fn the function you wanna run when you reach in the deep property
+ * @param {Function} fn the function you wanna run when you reach in the deep property
+ * @param {Function} setter the function we used to set the value, can be used as Vue.set
  * @return {Function}    the handler
  */
 export function genTraversalHandler (fn: Function, setter: Function = (target, key, value) => { target[key] = value; }): Function {
