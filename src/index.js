@@ -1,5 +1,5 @@
 // @flow
-import { isArray, isObject, isPrimitive, isString, isVoid } from 'toxic-predicate-functions';
+import { isArray, isPlainObject, isObject, isString, isNil } from 'lodash';
 /**
  * the handler to generate an deep traversal handler
  * @param {Function} fn the function you wanna run when you reach in the deep property
@@ -10,9 +10,9 @@ export function genTraversalHandler(fn: Function, setter: Function = (target, ke
   // use recursive to move what in source to the target
   // if you do not provide a target, we will create a new target
   function recursiveFn(source, target, key) {
-    if (isArray(source) || isObject(source)) {
-      target = isPrimitive(target)
-        ? (isObject(source) ? {} : [])
+    if (isArray(source) || isPlainObject(source)) {
+      target = !isObject(target)
+        ? (isPlainObject(source) ? {} : [])
         : target;
       for (const key in source) {
         // $FlowFixMe: support computed key here
@@ -32,7 +32,7 @@ const _deepAssign = genTraversalHandler(val => val);
  * @return {clone-target}        the new Object
  */
 export function deepClone<T: Object | Array<any>>(source: T): T {
-  if (isPrimitive(source)) {
+  if (!isObject(source)) {
     throw new TypeError('deepClone only accept non primitive type');
   }
   return _deepAssign(source);
@@ -47,7 +47,7 @@ export function deepAssign<T: any>(...args: Array<T>): T & T {
     throw new Error('deepAssign accept two and more argument');
   }
   for (let i = args.length - 1; i > -1; i--) {
-    if (isPrimitive(args[i])) {
+    if (!isObject(args[i])) {
       throw new TypeError('deepAssign only accept non primitive type');
     }
   }
@@ -142,7 +142,7 @@ export function getDeepProperty(obj: any, keys: string | Array<string>, {
   let target = obj;
   for (let i = 0, len = keys.length; i < len; i++) {
     const key = keys[i];
-    if (isVoid(target)) {
+    if (isNil(target)) {
       if (throwError) {
         throw new Error(`obj${read.length > 0 ? ('.' + read.join('.')) : ' itself'} is ${target}`);
       } else {
