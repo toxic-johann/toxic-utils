@@ -3,5 +3,5 @@ export default Object.assign(base('es'), {
   output: {
     format: 'es',
     file: 'lib/index.mjs',
-  }
+  },
 });

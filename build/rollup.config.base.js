@@ -1,4 +1,4 @@
-const {version, name, author, license} = require('../package.json');
+const { version, name, author, license } = require('../package.json');
 const banner = `
 /**
  * ${name} v${version}
@@ -14,55 +14,55 @@ const babelConfig = {
   common: {
     presets: [
       'flow',
-      ['latest', {es2015: {modules: false}}]
+      [ 'latest', { es2015: { modules: false } }],
     ],
-    plugins: ['transform-runtime'],
+    plugins: [ 'transform-runtime' ],
     exclude: 'node_modules/**',
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   es: {
     presets: [
       'flow',
-      ['latest', {es2015: {modules: false}}]
+      [ 'latest', { es2015: { modules: false } }],
     ],
-    plugins: ['transform-runtime'],
+    plugins: [ 'transform-runtime' ],
     exclude: 'node_modules/**',
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   umd: {
-    presets: ['flow', 'es2015-rollup'],
-    plugins: ['transform-runtime'],
+    presets: [ 'flow', 'es2015-rollup' ],
+    plugins: [ 'transform-runtime' ],
     exclude: 'node_modules/**',
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   iife: {
-    presets: ['flow', 'es2015-rollup'],
+    presets: [ 'flow', 'es2015-rollup' ],
     exclude: 'node_modules/**',
     plugins: [],
-    babelrc: false
+    babelrc: false,
   },
   min: {
-    presets: ['flow', 'es2015-rollup'],
+    presets: [ 'flow', 'es2015-rollup' ],
     plugins: [],
     exclude: 'node_modules/**',
-    babelrc: false
-  }
+    babelrc: false,
+  },
 };
-export default function (mode) {
+export default function(mode) {
   return {
     input: 'src/index.js',
     banner,
-    external (id) {
+    external(id) {
       return !/min|umd|iife/.test(mode) && /babel-runtime|toxic-predicate-functions/.test(id);
     },
     plugins: [
       babel(babelConfig[mode]),
       flow(),
       resolve(),
-      commonjs()
-    ]
+      commonjs(),
+    ],
   };
-};
+}
