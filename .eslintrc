@@ -9,7 +9,7 @@
     "jest/globals": true
   },
   "extends": [
-    "eslint-config-egg",
+    "eslint-config-egg"
   ],
   "plugins": [
     "jest"
