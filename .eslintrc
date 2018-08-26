@@ -10,10 +10,8 @@
   },
   "extends": [
     "eslint-config-egg",
-    "plugin:flowtype/recommended"
   ],
   "plugins": [
-    "flowtype",
     "jest"
   ],
   "parser": "babel-eslint",
