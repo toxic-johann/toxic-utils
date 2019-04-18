@@ -41,7 +41,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-latest": "^6.24.1",
-    "documentation": "^9.0.0",
+    "documentation": "^10.0.0",
     "eslint": "^5.4.0",
     "eslint-config-egg": "^7.1.0",
     "eslint-plugin-jest": "^22.0.0",
