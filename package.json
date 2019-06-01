@@ -7,7 +7,7 @@
   "jsnext:main": "lib/index.mjs",
   "browser": "lib/index.browser.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage && node env-node-check",
     "start": "jest --coverage --watch",
     "lint": "tslint -c ./tslint.json 'src/**/*.ts' --fix && eslint ./ --fix",
     "precommit": "npm run lint",
