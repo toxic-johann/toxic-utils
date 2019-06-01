@@ -1,4 +1,4 @@
-import { isArray, isNil, isObject, isPlainObject, isString } from "lodash";
+import { isArray, isNil, isObject, isPlainObject, isString } from "lodash-es";
 /**
  * the handler to generate an deep traversal handler
  * @param {Function} fn the function you wanna run when you reach in the deep property
