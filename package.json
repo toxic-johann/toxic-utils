@@ -38,7 +38,7 @@
   "homepage": "https://github.com/toxic-johann/toxic-utils#readme",
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.6.3",
     "@types/lodash-es": "^4.17.3",
     "babel-core": "^7.0.0-bridge.0",
